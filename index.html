@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASCII Art Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+      <h1>Generate ASCII Art</h1>
+        <form id="inputForm">
+            <br>
+            <label  for="inputType">Choose the banner </label>
+            <select id="inputType" name="inputType">
+                <option value="standard">Standard</option>
+                <option value="shadow">Shadow</option>
+                <option value="thinkertoy">Thinkertoy</option>
+            </select>
+            </br>
+            <br>
+            <textarea id="message" name="message" rows="10" cols="50" placeholder="Hello World!" autocomplete="on" required autofocus></textarea>
+            </br>
+            <br>
+            <button type="button" id="submitBtn">Click Me!</button>
+            </br>
+        </form>
+
+        <div id="output">
+            <!-- Output from Go program will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            var inputType = document.getElementById('inputType').value;
+            var textInput = document.getElementById('message').value;
+
+            // Replace '\n' with actual newlines
+            textInput = textInput.replace(/\\n/g, '\n');
+
+            // Send the user's input to the Go program
+            var formData = new FormData();
+            formData.append("inputType", inputType);
+            formData.append("message", textInput);
+
+            fetch('/process', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Replace literal '\n' with actual newlines in the output
+                data = data.replace(/\\n/g, '\n');
+                document.getElementById('output').innerHTML = data;
+            });
+        });
+    </script>
+</body>
+</html>

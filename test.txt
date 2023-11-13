@@ -1,0 +1,14 @@
+Testing the programm:
+
+Try inputting with the standard template/banner the following example:
+
+In the first line: {123}
+
+In the second line: <Hello> (World)!
+
+Try to input: 123?? (using the template/banner standard)
+
+Try to input: $% "= (using the template/banner shadow)
+
+Try to input: 123 T/fs#R (using the template/banner thinkertoy)
+

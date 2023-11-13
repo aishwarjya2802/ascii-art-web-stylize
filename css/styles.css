@@ -1,0 +1,88 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, rgb(21, 21, 44) 0%,rgb(134, 132, 132) 100%);
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 40px;
+    animation: animateh1 2s linear infinite;
+    color:rgb(112, 103, 103)
+}
+
+    @keyframes animateh1 {
+        0% {
+            transform: scale(1);
+        }
+        
+        50% {
+            transform: scale(1.2);
+            color: #377ddf;
+            }
+        100% {
+            transform: scale(1);
+            }
+        }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    overflow: auto
+}
+
+select {
+    font-size: 17px;
+    color: rgb(156, 80, 228);
+    border-radius: 3cm;
+}
+
+#output {
+    max-width: 900px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    white-space: pre;
+    overflow: auto;
+}
+
+label{
+    color:rgb(137, 206, 214); 
+    font-size: 20px
+}
+textarea {
+    background-color: rgb(172, 184, 188);
+    text-align: center;
+    font-family:"Times New Roman", Times, serif;  
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1cm;
+    border-style: dashed
+}
+
+#message::placeholder {
+    font-weight: bold;
+    font-size: 20px
+  }
+
+button {
+    background-color: rgb(38, 126, 129);
+    color: #FFFFFF; 
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 1cm;
+    font-size: 17px;
+    transition: background-color 0.3s ease-in-out
+    
+}
+
+button:hover {
+    background-color: rgb(67, 67, 113);
+}
